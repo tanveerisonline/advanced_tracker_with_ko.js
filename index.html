@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-10 offset-1">
+          <h3>Diabetes Mellitus Types I and II Clinical Trials</h3>
+          <p>
+            A listing of Diabetes Mellitus Types I and II medical research
+            trials actively recruiting patient volunteers. Search for closest
+            city to find more detailed information on a research study in your
+            area.
+          </p>
+          <div class="row">
+            <div class="col-md-4">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Diabetes Mellitus Types I and II"
+                aria-label="First name"
+              />
+            </div>
+            <div class="col-md-3">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Location"
+                aria-label="Last name"
+              />
+            </div>
+            <div class="col-md-3">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Open this select menu</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+            </div>
+
+            <div class="col-md-2">
+              <button type="button" class="btn btn-primary btn-search">
+                Search
+              </button>
+            </div>
+          </div>
+          <div class="col-md-12 mt-3 filter">
+            <p>Filter By</p>
+            <p>
+              <!-- Button trigger modal -->
+              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Advance
+              </a>
+            </p>
+            <div
+              class="modal fade"
+              id="exampleModal"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="modal-title">Advanced Filters</h4>
+                  </div>
+                  <div class="modal-body">
+                    <div class="tab">
+                      <button
+                        class="tablinks"
+                        onclick="openCity(event, 'London')"
+                        id="defaultOpen"
+                      >
+                        London
+                      </button>
+                      <button
+                        class="tablinks"
+                        onclick="openCity(event, 'Paris')"
+                      >
+                        Paris
+                      </button>
+                      <button
+                        class="tablinks"
+                        onclick="openCity(event, 'Tokyo')"
+                      >
+                        Tokyo
+                      </button>
+                    </div>
+
+                    <div id="London" class="tabcontent">
+                      <h3>London</h3>
+                      <ul>
+                        <li>
+                          <div>
+                            <input
+                              type="checkbox"
+                              value="John"
+                              data-bind="checked: selectedFilters"
+                            />
+                            <span>John</span>
+                            <input
+                              type="checkbox"
+                              value="Allen"
+                              data-bind="checked: selectedFilters"
+                            />
+                            <span>Allen</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <div id="Paris" class="tabcontent">
+                      <h3>Paris</h3>
+                      <ul>
+                        <li>
+                          <div>
+                            <input
+                              type="checkbox"
+                              value="John 1"
+                              data-bind="checked: selectedFilters"
+                            />
+                            <span>John1</span>
+                            <input
+                              type="checkbox"
+                              value="Allen1"
+                              data-bind="checked: selectedFilters"
+                            />
+                            <span>Allen1</span>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+
+                    <!-- sfsfeeses -->
+                  </div>
+
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-info waves-effect waves-light"
+                    >
+                      Reset
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-primary waves-effect waves-light"
+                      id="btnApply"
+                      onclick="applyFilters()"
+                    >
+                      Apply
+                    </button>
+                    <div id="advanced-filter-home">
+                      <span data-bind="foreach: selectedFilters">
+                        <input type="checkbox" class="custom_checkboxes" />
+                        <label for="myCheckbox5">
+                          <b data-bind="text: $data"></b
+                        ></label>
+                      </span>
+                    </div>
+
+                    <script>
+                      function applyFilters() {
+                        // get the base url so that we can apply filters
+                        var baseURL =
+                          window.location.protocol +
+                          "//" +
+                          window.location.host +
+                          window.location.pathname;
+                        // Partially reset the history
+                        window.history.pushState(
+                          { path: baseURL },
+                          "",
+                          baseURL
+                        );
+                        // initialize the URLSearchParams so that we can append filters to it
+                        const urlParams = new URLSearchParams(
+                          window.location.search
+                        );
+                        //add filters to the URL
+                        selectedFilter.forEach((element) => {
+                          //urlParams += element + "=" + element;
+                          urlParams.set(element, element);
+                        });
+                        selectedFilterOnHomePage.forEach((element) => {
+                          //urlParams += element + "=" + element;
+                          urlParams.set(element, element);
+                        });
+                        // set the URL history
+                        var refresh =
+                          baseURL + window.location.search.indexOf("?") > -1
+                            ? ""
+                            : "?" + encodeURI(urlParams);
+                        window.history.pushState(
+                          { path: refresh },
+                          "",
+                          refresh
+                        );
+
+                        // reset the selectedFilter so that params wont be repeated
+                        // selectedFilter = new Set();
+                      }
+                      function applyFiltersOnHomePage() {
+                        // get the base url so that we can apply filters
+                        var baseURL =
+                          window.location.protocol +
+                          "//" +
+                          window.location.host +
+                          window.location.pathname;
+                        // Partially reset the history
+                        window.history.pushState(
+                          { path: baseURL },
+                          "",
+                          baseURL
+                        );
+                        // initialize the URLSearchParams so that we can append filters to it
+                        const urlParams = new URLSearchParams(
+                          window.location.search
+                        );
+                        //add filters to the URL
+                        selectedFilterOnHomePage.forEach((element) => {
+                          //urlParams += element + "=" + element;
+                          urlParams.set(element, element);
+                        });
+                        selectedFilter.forEach((element) => {
+                          //urlParams += element + "=" + element;
+                          urlParams.set(element, element);
+                        });
+
+                        // set the URL history
+                        var refresh =
+                          baseURL + window.location.search.indexOf("?") > -1
+                            ? ""
+                            : "?" + encodeURI(urlParams);
+                        window.history.pushState(
+                          { path: refresh },
+                          "",
+                          refresh
+                        );
+
+                        // reset the selectedFilterOnHomePage so that params wont be repeated
+                        //selectedFilterOnHomePage = new Array();
+                      }
+                    </script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="checkbox-div">
+            <input type="checkbox" id="myCheckbox" class="custom_checkboxes" />
+            <label for="myCheckbox" onclick="AddToFilter('myCheckbox','One')">
+              One</label
+            >
+
+            <input type="checkbox" id="myCheckbox2" class="custom_checkboxes" />
+            <label for="myCheckbox2" onclick="AddToFilter('myCheckbox2','two')">
+              Two</label
+            >
+
+            <input type="checkbox" id="myCheckbox3" class="custom_checkboxes" />
+            <label
+              for="myCheckbox3"
+              onclick="AddToFilter('myCheckbox3','Three')"
+            >
+              Three</label
+            >
+
+            <input type="checkbox" id="myCheckbox4" class="custom_checkboxes" />
+            <label
+              for="myCheckbox4"
+              onclick="AddToFilter('myCheckbox4','Four')"
+            >
+              Four</label
+            >
+
+            <input type="checkbox" id="myCheckbox5" class="custom_checkboxes" />
+            <label
+              for="myCheckbox5"
+              onclick="AddToFilter('myCheckbox5','Five')"
+            >
+              Five</label
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="advanced-filter-home">
+        <span data-bind="foreach: selectedFilters">
+          <input type="checkbox" class="custom_checkboxes" />
+          <label for="myCheckbox5"> <b data-bind="text: $data"></b></label>
+        </span>
+      </div>
+    </div>
+
+    <script src="script.js" />
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"></script>
+
+    <script src="knockout-3.5.1.js"></script>
+    <script type="text/javascript">
+      var selectedFilterOnHomePage = new Set();
+      var selectedFilter = new Set();
+
+      function AddToFilter(id, filterName) {
+        // Get the checkbox
+        var checkBox = document.getElementById(id);
+
+        if (checkBox.checked === true) {
+          selectedFilterOnHomePage.delete(filterName);
+          applyFiltersOnHomePage();
+        } else {
+          selectedFilterOnHomePage.add(filterName);
+          applyFiltersOnHomePage();
+        }
+      }
+
+      var viewModel = function () {
+        selectedFilters = ko.observableArray();
+        displayedPeople = ko.computed(function () {
+          selectedFilter = new Set();
+          var str = "";
+          ko.utils.arrayForEach(self.selectedFilters(), function (item) {
+            str += item + " ";
+
+            selectedFilter.add(item);
+          });
+
+          return str;
+        });
+      };
+
+      ko.applyBindings(new viewModel());
+    </script>
+  </body>
+</html>
