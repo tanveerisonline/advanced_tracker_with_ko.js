@@ -83,70 +83,275 @@
                     <div class="tab">
                       <button
                         class="tablinks"
-                        onclick="openCity(event, 'London')"
+                        onclick="openCity(event, 'Gender')"
                         id="defaultOpen"
                       >
-                        London
+                        Gender
                       </button>
                       <button
                         class="tablinks"
-                        onclick="openCity(event, 'Paris')"
+                        onclick="openCity(event, 'Phase')"
                       >
-                        Paris
+                        Phase
                       </button>
                       <button
                         class="tablinks"
-                        onclick="openCity(event, 'Tokyo')"
+                        onclick="openCity(event, 'Study')"
                       >
-                        Tokyo
+                        Study Type
+                      </button>
+
+                      <button
+                        class="tablinks"
+                        onclick="openCity(event, 'Sponsors')"
+                      >
+                        Sponsors
+                      </button>
+
+                      <button
+                        class="tablinks"
+                        onclick="openCity(event, 'Accepted')"
+                      >
+                        Accepts Healthy volunteers
+                      </button>
+
+                      <button class="tablinks" onclick="openCity(event, 'New')">
+                        New/Updated Trials
                       </button>
                     </div>
 
-                    <div id="London" class="tabcontent">
-                      <h3>London</h3>
-                      <ul>
-                        <li>
-                          <div>
-                            <input
-                              type="checkbox"
-                              value="John"
-                              data-bind="checked: selectedFilters"
-                            />
-                            <span>John</span>
-                            <input
-                              type="checkbox"
-                              value="Allen"
-                              data-bind="checked: selectedFilters"
-                            />
-                            <span>Allen</span>
-                          </div>
-                        </li>
-                      </ul>
+                    <div id="Gender" class="tabcontent">
+                      <!-- <ul>
+                        <li> -->
+                      <div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Male only"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Male only</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Female only"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Female only</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Any"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Any</span>
+                        </div>
+                      </div>
+                      <!-- </li>
+                      </ul> -->
                     </div>
 
-                    <div id="Paris" class="tabcontent">
-                      <h3>Paris</h3>
-                      <ul>
-                        <li>
-                          <div>
-                            <input
-                              type="checkbox"
-                              value="John 1"
-                              data-bind="checked: selectedFilters"
-                            />
-                            <span>John1</span>
-                            <input
-                              type="checkbox"
-                              value="Allen1"
-                              data-bind="checked: selectedFilters"
-                            />
-                            <span>Allen1</span>
-                          </div>
-                        </li>
-                      </ul>
+                    <div id="Phase" class="tabcontent">
+                      <!-- <ul>
+                        <li> -->
+                      <div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Phase (1)"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Phase (1)</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Phase (2)"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Phase (2)</span>
+                        </div>
+
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Phase (3)"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Phase (3)</span>
+                        </div>
+
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Phase (4)"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Phase (4)</span>
+                        </div>
+
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Phase (5)"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Phase (5)</span>
+                        </div>
+                      </div>
+                      <!-- </li>
+                      </ul> -->
                     </div>
 
-                    <!-- sfsfeeses -->
+                    <div id="Study" class="tabcontent">
+                      <!-- <ul>
+                        <li> -->
+                      <div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Interventional"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Interventional</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Observentional"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Observentional</span>
+                        </div>
+                      </div>
+                      <!-- </li>
+                      </ul> -->
+                    </div>
+
+                    <div id="Sponsors" class="tabcontent">
+                      <!-- <ul>
+                        <li> -->                      
+                        <form class="form-inline">
+                          <input
+                            class="form-control mr-sm-2"
+                            type="search"
+                            placeholder="Search"
+                            aria-label="Search"
+                          />
+                          <button
+                            class="btn btn-outline-success my-2 my-sm-0"
+                            type="submit"
+                          >
+                            Search
+                          </button>
+                        </form>
+                      </nav>
+                      <div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Eli Lilly and Company"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Eli Lilly and Company</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="University of Virginia"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>University of Virginia</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="University of Colorado"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>University of Colorado</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Emory University"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Emory University</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Mayo Clinic"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Mayo Clinic</span>
+                        </div>
+                      </div>
+                      <!-- </li>
+                      </ul> -->
+                    </div>
+
+                    <div id="Accepted" class="tabcontent">
+                      <!-- <ul>
+                        <li> -->
+                      <div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="No (587)"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>No (587)</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Yes (256)"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Yes (256)</span>
+                        </div>
+                      </div>
+                      <!-- </li>
+                      </ul> -->
+                    </div>
+
+                    <div id="New" class="tabcontent">
+                      <!-- <ul>
+                        <li> -->
+                      <div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="Updated Trials"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>Updated Trials</span>
+                        </div>
+                        <div>
+                          <input
+                            type="checkbox"
+                            value="New Trials"
+                            data-bind="checked: selectedFilters"
+                          />
+                          <span>New Trials</span>
+                        </div>
+                      </div>
+                      <!-- </li>
+                      </ul> -->
+                    </div>
+                  </div>
+                  <hr />
+                  <div id="advanced-filter-home mb-2">
+                    <span data-bind="foreach: selectedFilters">
+                      <input type="checkbox" class="custom_checkboxes" />
+                      <label for="myCheckbox5">
+                        <b data-bind="text: $data"></b
+                      ></label>
+                    </span>
                   </div>
 
                   <div class="modal-footer">
@@ -164,14 +369,6 @@
                     >
                       Apply
                     </button>
-                    <div id="advanced-filter-home">
-                      <span data-bind="foreach: selectedFilters">
-                        <input type="checkbox" class="custom_checkboxes" />
-                        <label for="myCheckbox5">
-                          <b data-bind="text: $data"></b
-                        ></label>
-                      </span>
-                    </div>
 
                     <script>
                       function applyFilters() {
