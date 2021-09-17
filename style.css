@@ -32,13 +32,14 @@
 input[type="checkbox"] + label {
   -webkit-transition: all 500ms ease;
   transition: all 500ms ease;
-  font-size: 18px;
+  font-size: 15px;
+  font-weight: 300;
   cursor: pointer;
   border-radius: 50px;
   background-color: #fff;
-  border: solid 2px #7d7d7d;
+  border: solid 1px #7d7d7d;
   margin: 3px 1px 3px 1px;
-  padding: 0.4rem 2rem;
+  padding: 0.2rem 1rem;
   display: inline-block;
   -moz-user-select: -moz-none;
   -webkit-user-select: none;
@@ -84,13 +85,13 @@ input[type="checkbox"]:checked + label {
 /* Change background color of buttons on hover */
 .tab button:hover {
   background-color: #edfbff;
-  /* border-left: 0.1875rem solid #0180a6; */
 }
 
 /* Create an active/current "tab button" class */
 .tab button.active {
   background-color: #ccedfb;
   border-left: 0.1875rem solid #0180a6;
+  color: #0180a6;
 }
 
 /* Style the tab content */
@@ -101,4 +102,23 @@ input[type="checkbox"]:checked + label {
 }
 .tabcontent ul {
   list-style: none;
+}
+/* ----------close btn-------- */
+
+.closebtn {
+  padding-left: 10px;
+  padding-top: 1px;
+  color: #fff;
+  font-weight: bold;
+  float: right;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.closebtn:hover {
+  color: #000;
+}
+.filter-bg {
+  background-color: #0180a6 !important;
+  color: #fff !important;
 }

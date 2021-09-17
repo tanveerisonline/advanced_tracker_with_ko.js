@@ -63,18 +63,19 @@
             <p>Filter By</p>
             <p>
               <!-- Button trigger modal -->
-              <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <a href="#" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
                 Advance
               </a>
             </p>
-            <div
+            <!-- <div
               class="modal fade"
-              id="exampleModal"
+              id="exampleModalCenter"
               tabindex="-1"
-              aria-labelledby="exampleModalLabel"
+              aria-labelledby="exampleModalLabelCenter"
               aria-hidden="true"
-            >
-              <div class="modal-dialog">
+            > -->
+            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
                     <h4 class="modal-title">Advanced Filters</h4>
@@ -312,7 +313,7 @@
                             value="Yes (256)"
                             data-bind="checked: selectedFilters"
                           />
-                          <span>Yes (256)</span>
+                          <span>Yes (256)</span>                          
                         </div>
                       </div>
                       <!-- </li>
@@ -345,12 +346,12 @@
                     </div>
                   </div>
                   <hr />
-                  <div id="advanced-filter-home mb-2">
+                  <div id="advanced-filter-home">
                     <span data-bind="foreach: selectedFilters">
-                      <input type="checkbox" class="custom_checkboxes" />
-                      <label for="myCheckbox5">
+                      <input type="checkbox" class="custom_checkboxes filter-bg" name="$data" />
+                      <label for="$data" class="filter-bg">
                         <b data-bind="text: $data"></b
-                      ></label>
+                      ><span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span></label>
                     </span>
                   </div>
 
@@ -498,10 +499,10 @@
           <div class="row mt-3">
             <div id="advanced-filter-home">
               <span data-bind="foreach: selectedFilters">
-                <input type="checkbox" class="custom_checkboxes" />
-                <label for="myCheckbox5">
+                <input type="checkbox" class="custom_checkboxes filter-bg" name="$data" />
+                <label for="$data" class="filter-bg">
                   <b data-bind="text: $data"></b
-                ></label>
+                ><span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span></label>
               </span>
             </div>
           </div>
