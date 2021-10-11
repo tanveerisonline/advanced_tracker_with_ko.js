@@ -63,7 +63,11 @@
             <p>Filter By</p>
             <p>
               <!-- Button trigger modal -->
-              <a href="#" data-bs-toggle="modal" data-bs-target=".bd-example-modal-lg">
+              <a
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target=".bd-example-modal-lg"
+              >
                 Advance
               </a>
             </p>
@@ -74,7 +78,13 @@
               aria-labelledby="exampleModalLabelCenter"
               aria-hidden="true"
             > -->
-            <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div
+              class="modal fade bd-example-modal-lg"
+              tabindex="-1"
+              role="dialog"
+              aria-labelledby="myLargeModalLabel"
+              aria-hidden="true"
+            >
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
@@ -233,22 +243,21 @@
 
                     <div id="Sponsors" class="tabcontent">
                       <!-- <ul>
-                        <li> -->                      
-                        <form class="form-inline">
-                          <input
-                            class="form-control mr-sm-2"
-                            type="search"
-                            placeholder="Search"
-                            aria-label="Search"
-                          />
-                          <button
-                            class="btn btn-outline-success my-2 my-sm-0"
-                            type="submit"
-                          >
-                            Search
-                          </button>
-                        </form>
-                      </nav>
+                        <li> -->
+                      <form class="form-inline">
+                        <input
+                          class="form-control mr-sm-2"
+                          type="search"
+                          placeholder="Search"
+                          aria-label="Search"
+                        />
+                        <button
+                          class="btn btn-outline-success my-2 my-sm-0"
+                          type="submit"
+                        >
+                          Search
+                        </button>
+                      </form>
                       <div>
                         <div>
                           <input
@@ -313,7 +322,7 @@
                             value="Yes (256)"
                             data-bind="checked: selectedFilters"
                           />
-                          <span>Yes (256)</span>                          
+                          <span>Yes (256)</span>
                         </div>
                       </div>
                       <!-- </li>
@@ -348,10 +357,19 @@
                   <hr />
                   <div id="advanced-filter-home">
                     <span data-bind="foreach: selectedFilters">
-                      <input type="checkbox" class="custom_checkboxes filter-bg" name="$data" />
+                      <input
+                        type="checkbox"
+                        class="custom_checkboxes filter-bg"
+                        name="$data"
+                      />
                       <label for="$data" class="filter-bg">
                         <b data-bind="text: $data"></b
-                      ><span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span></label>
+                        ><span
+                          class="closebtn"
+                          onclick="this.parentElement.style.display='none'"
+                          >&times;</span
+                        ></label
+                      >
                     </span>
                   </div>
 
@@ -499,10 +517,19 @@
           <div class="row mt-3">
             <div id="advanced-filter-home">
               <span data-bind="foreach: selectedFilters">
-                <input type="checkbox" class="custom_checkboxes filter-bg" name="$data" />
+                <input
+                  type="checkbox"
+                  class="custom_checkboxes filter-bg"
+                  name="$data"
+                />
                 <label for="$data" class="filter-bg">
                   <b data-bind="text: $data"></b
-                ><span class="closebtn" onclick="this.parentElement.style.display='none'">&times;</span></label>
+                  ><span
+                    class="closebtn"
+                    onclick="this.parentElement.style.display='none'"
+                    >&times;</span
+                  ></label
+                >
               </span>
             </div>
           </div>
